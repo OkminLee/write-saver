@@ -1,0 +1,33 @@
+{
+  "user": {
+    "started_at": "2024-12-31",
+    "total_xp": 0,
+    "current_streak": 0,
+    "longest_streak": 0,
+    "total_sessions": 0,
+    "total_words": 0
+  },
+  "badges": [],
+  "genre_stats": {
+    "journal": { "count": 0, "total_words": 0 },
+    "essay": { "count": 0, "total_words": 0 },
+    "story": { "count": 0, "total_words": 0 },
+    "tech": { "count": 0, "total_words": 0 },
+    "copy": { "count": 0, "total_words": 0 }
+  },
+  "sessions": [],
+  "weekly_plans": {
+    "monday": "journal",
+    "tuesday": "tech",
+    "wednesday": "essay",
+    "thursday": "story",
+    "friday": "free",
+    "saturday": "review",
+    "sunday": "retrospective"
+  },
+  "settings": {
+    "daily_reminder": null,
+    "preferred_session_length": 30,
+    "feedback_style": "balanced"
+  }
+}
