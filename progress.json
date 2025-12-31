@@ -32,12 +32,12 @@
   },
   "blog": {
     "enabled": true,
-    "repo_path": null,
-    "repo_url": null,
+    "repo_path": "~/Work/OkminLee.github.io",
+    "repo_url": "https://okminlee.github.io",
     "posts_dir": "_posts",
     "drafts_dir": "_drafts",
-    "username": null,
-    "default_author": null,
+    "username": "OkminLee",
+    "default_author": "OkminLee",
     "categories": {
       "journal": "일상",
       "essay": "에세이",
