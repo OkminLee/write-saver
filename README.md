@@ -20,22 +20,23 @@
 ### 필수 요구사항
 
 - Claude Code CLI
-- 글쓰기 스킬들이 `~/.claude/skills/`에 설치되어 있어야 합니다
 
-### 설치된 스킬 확인
+### 프로젝트 구조
 
-```bash
-ls ~/.claude/skills/
+모든 스킬과 커맨드가 프로젝트 내부 `.claude/` 디렉토리에 포함되어 있습니다:
+
 ```
-
-다음 스킬들이 있어야 합니다:
-- `write-saver/` - 메인 에이전트
-- `daily-journal/` - 일기/감정 기록
-- `essay-builder/` - 에세이/칼럼
-- `story-crafter/` - 창작/소설/시
-- `tech-writer/` - 기술 문서/블로그
-- `copywriting/` - 광고/마케팅 문구
-- `publish/` - 블로그 게시
+.claude/
+├── commands/           # 슬래시 커맨드
+│   ├── write.md        # /write - 글쓰기 세션
+│   └── publish.md      # /publish - 블로그 게시
+└── skills/             # 장르별 글쓰기 스킬
+    ├── daily-journal/  # 일기/감정 기록
+    ├── essay-builder/  # 에세이/칼럼
+    ├── story-crafter/  # 창작/소설/시
+    ├── tech-writer/    # 기술 문서/블로그
+    └── copywriting/    # 광고/마케팅 문구
+```
 
 ### 첫 세션 시작
 
@@ -53,9 +54,9 @@ Claude Code가 시작되면:
 
 ## 스킬 구성
 
-### 메인 에이전트: write-saver
+### 메인 커맨드: /write
 
-전체 글쓰기 세션을 관리하는 코치 에이전트입니다.
+전체 글쓰기 세션을 관리하는 코치 커맨드입니다.
 
 | 기능 | 설명 |
 |------|------|
@@ -69,11 +70,11 @@ Claude Code가 시작되면:
 
 | 스킬 | 용도 | 핵심 기능 |
 |------|------|-----------|
-| `/daily-journal` | 일기/감정 기록 | 워밍업 질문, 감정 탐색, 공감 피드백 |
-| `/essay-builder` | 에세이/칼럼 | 구조 설계, AIDA 모델, 논리 점검 |
-| `/story-crafter` | 창작/소설/시 | 글감 프롬프트, 3막 구조, Show don't tell |
-| `/tech-writer` | 기술문서/블로그 | 템플릿, 피라미드 원칙, 명확성 점검 |
-| `/copywriting` | 광고/마케팅 | AIDA/PAS 공식, 강력한 동사, CTA 최적화 |
+| `daily-journal` | 일기/감정 기록 | 워밍업 질문, 감정 탐색, 공감 피드백 |
+| `essay-builder` | 에세이/칼럼 | 구조 설계, AIDA 모델, 논리 점검 |
+| `story-crafter` | 창작/소설/시 | 글감 프롬프트, 3막 구조, Show don't tell |
+| `tech-writer` | 기술문서/블로그 | 템플릿, 피라미드 원칙, 명확성 점검 |
+| `copywriting` | 광고/마케팅 | AIDA/PAS 공식, 강력한 동사, CTA 최적화 |
 
 ---
 
@@ -127,14 +128,14 @@ Claude Code가 시작되면:
 
 ### 장르별 직접 호출
 
-에이전트 없이 장르별 스킬만 사용할 수도 있습니다:
+`/write` 커맨드의 인자로 장르를 지정하면 해당 장르 스킬이 활성화됩니다:
 
 ```bash
-/daily-journal    # 일기 스킬 직접 사용
-/essay-builder    # 에세이 스킬 직접 사용
-/story-crafter    # 창작 스킬 직접 사용
-/tech-writer      # 기술 글쓰기 스킬 직접 사용
-/copywriting      # 카피라이팅 스킬 직접 사용
+/write journal    # daily-journal 스킬 활성화
+/write essay      # essay-builder 스킬 활성화
+/write story      # story-crafter 스킬 활성화
+/write tech       # tech-writer 스킬 활성화
+/write copy       # copywriting 스킬 활성화
 ```
 
 ---
