@@ -338,7 +338,7 @@ blog-template/
 ```json
 {
   "user": {
-    "started_at": "2024-12-31",
+    "started_at": "2025-12-31",
     "total_xp": 0,
     "current_streak": 0,
     "longest_streak": 0,
@@ -379,7 +379,7 @@ blog-template/
 ~/Work/write-saver/
 ├── progress.json       # 진행 상황 (XP, 스트릭, 배지)
 ├── sessions/           # 일일 세션 기록
-│   ├── 2024-12-31.md
+│   ├── 2025-12-31.md
 │   ├── 2025-01-01.md
 │   └── ...
 └── weekly/             # 주간 리포트
