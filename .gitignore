@@ -3,9 +3,6 @@
 .AppleDouble
 .LSOverride
 
-# Claude Code
-.claude/
-
 # IDE
 .idea/
 .vscode/
