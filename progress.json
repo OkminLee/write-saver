@@ -75,12 +75,19 @@
         "category": "tech",
         "url": "https://okminlee.github.io/2025/12/31/claude-code-workflow",
         "session_date": "2025-12-31"
+      },
+      {
+        "date": "2025-12-31",
+        "title": "2026년 새해 다짐",
+        "category": "journal",
+        "url": "https://okminlee.github.io/2025/12/31/new-year-resolutions-2026",
+        "session_date": "2025-12-31"
       }
     ],
     "stats": {
-      "total_published": 1,
+      "total_published": 2,
       "by_category": {
-        "journal": 0,
+        "journal": 1,
         "essay": 0,
         "story": 0,
         "tech": 1,
