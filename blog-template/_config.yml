@@ -1,0 +1,73 @@
+# Write-Saver Blog
+# Jekyll configuration for GitHub Pages
+
+# Site settings
+title: "Write-Saver Blog"
+description: "매일 글쓰기로 성장하는 이야기"
+url: "" # https://username.github.io
+baseurl: "" # 서브디렉토리 사용 시 설정
+
+# Author
+author:
+  name: "Your Name"
+  email: "your@email.com"
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+# Permalink settings
+permalink: /:year/:month/:day/:title/
+
+# Collections (optional)
+collections:
+  series:
+    output: true
+    permalink: /series/:name/
+
+# Category settings
+category_archive:
+  type: liquid
+  path: /categories/
+
+# Tag settings
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Your Name"
+      comments: true
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - .gitignore
+  - README.md
+
+# Timezone
+timezone: Asia/Seoul
+
+# Pagination (requires jekyll-paginate)
+# paginate: 10
+# paginate_path: "/page/:num/"

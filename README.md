@@ -10,6 +10,7 @@
 - [주간 플랜](#주간-플랜)
 - [진행 추적 시스템](#진행-추적-시스템)
 - [피드백 시스템](#피드백-시스템)
+- [블로그 게시](#블로그-게시)
 - [설정 커스터마이징](#설정-커스터마이징)
 
 ---
@@ -34,6 +35,7 @@ ls ~/.claude/skills/
 - `story-crafter/` - 창작/소설/시
 - `tech-writer/` - 기술 문서/블로그
 - `copywriting/` - 광고/마케팅 문구
+- `publish/` - 블로그 게시
 
 ### 첫 세션 시작
 
@@ -241,6 +243,90 @@ Claude Code가 시작되면:
 "settings": {
   "feedback_style": "balanced"  // encouraging, balanced, critical
 }
+```
+
+---
+
+## 블로그 게시
+
+Write-Saver에서 작성한 글을 GitHub Pages 블로그에 게시할 수 있습니다.
+
+### 블로그 설정
+
+#### 1. GitHub Pages 저장소 생성
+
+```bash
+# 블로그 저장소 생성 (username.github.io)
+cd ~/Work
+git clone https://github.com/username/username.github.io.git
+
+# 또는 blog-template 사용
+cp -r ~/Work/write-saver/blog-template/* ~/Work/username.github.io/
+```
+
+#### 2. progress.json에 블로그 정보 설정
+
+```json
+"blog": {
+  "enabled": true,
+  "repo_path": "~/Work/username.github.io",
+  "username": "username",
+  "default_author": "작성자 이름"
+}
+```
+
+### 게시 명령어
+
+```bash
+/publish              # 최근 글 목록에서 선택하여 게시
+/publish today        # 오늘 작성한 글 게시
+/publish draft        # 초안으로 저장 (게시 안 함)
+/publish list         # 게시된 글 목록 확인
+```
+
+### 게시 플로우
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  1️⃣  글 선택                                                │
+│      - 최근 작성한 글 목록에서 선택                          │
+├─────────────────────────────────────────────────────────────┤
+│  2️⃣  메타데이터 확인                                        │
+│      - 제목, 카테고리, 태그, 설명 확인/수정                  │
+├─────────────────────────────────────────────────────────────┤
+│  3️⃣  변환 및 게시                                           │
+│      - Jekyll 포맷으로 변환                                  │
+│      - 블로그 저장소에 commit & push                         │
+├─────────────────────────────────────────────────────────────┤
+│  4️⃣  완료                                                   │
+│      - 게시 URL 확인                                         │
+│      - GitHub Actions 빌드 후 1-2분 내 반영                  │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 장르별 카테고리 매핑
+
+| Write-Saver 장르 | 블로그 카테고리 |
+|------------------|-----------------|
+| journal | 일상 |
+| essay | 에세이 |
+| story | 창작 |
+| tech | 기술 |
+| copy | 마케팅 |
+
+### 블로그 템플릿
+
+`blog-template/` 디렉토리에 Jekyll 기반 블로그 템플릿이 포함되어 있습니다:
+
+```
+blog-template/
+├── _config.yml          # Jekyll 설정
+├── _posts/              # 게시된 글
+├── _drafts/             # 초안
+├── index.md             # 홈페이지
+├── about.md             # 소개 페이지
+├── Gemfile              # Ruby 의존성
+└── assets/images/       # 이미지
 ```
 
 ---

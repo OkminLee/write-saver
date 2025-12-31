@@ -29,5 +29,32 @@
     "daily_reminder": null,
     "preferred_session_length": 30,
     "feedback_style": "balanced"
+  },
+  "blog": {
+    "enabled": true,
+    "repo_path": null,
+    "repo_url": null,
+    "posts_dir": "_posts",
+    "drafts_dir": "_drafts",
+    "username": null,
+    "default_author": null,
+    "categories": {
+      "journal": "일상",
+      "essay": "에세이",
+      "story": "창작",
+      "tech": "기술",
+      "copy": "마케팅"
+    },
+    "published": [],
+    "stats": {
+      "total_published": 0,
+      "by_category": {
+        "journal": 0,
+        "essay": 0,
+        "story": 0,
+        "tech": 0,
+        "copy": 0
+      }
+    }
   }
 }
