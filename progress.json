@@ -1,21 +1,37 @@
 {
   "user": {
     "started_at": "2025-12-31",
-    "total_xp": 0,
-    "current_streak": 0,
-    "longest_streak": 0,
-    "total_sessions": 0,
-    "total_words": 0
+    "total_xp": 115,
+    "current_streak": 1,
+    "longest_streak": 1,
+    "total_sessions": 1,
+    "total_words": 500
   },
-  "badges": [],
+  "badges": [
+    {
+      "id": "first_step",
+      "name": "첫 발걸음",
+      "emoji": "🌱",
+      "earned_at": "2025-12-31",
+      "description": "첫 글쓰기 완료"
+    }
+  ],
   "genre_stats": {
     "journal": { "count": 0, "total_words": 0 },
     "essay": { "count": 0, "total_words": 0 },
     "story": { "count": 0, "total_words": 0 },
-    "tech": { "count": 0, "total_words": 0 },
+    "tech": { "count": 1, "total_words": 500 },
     "copy": { "count": 0, "total_words": 0 }
   },
-  "sessions": [],
+  "sessions": [
+    {
+      "date": "2025-12-31",
+      "genre": "tech",
+      "words": 500,
+      "xp_earned": 115,
+      "title": "Claude Code가 바꾼 나의 개발 워크플로우"
+    }
+  ],
   "weekly_plans": {
     "monday": "journal",
     "tuesday": "tech",
@@ -45,14 +61,22 @@
       "tech": "기술",
       "copy": "마케팅"
     },
-    "published": [],
+    "published": [
+      {
+        "date": "2025-12-31",
+        "title": "Claude Code가 바꾼 나의 개발 워크플로우",
+        "category": "tech",
+        "url": "https://okminlee.github.io/2025/12/31/claude-code-workflow",
+        "session_date": "2025-12-31"
+      }
+    ],
     "stats": {
-      "total_published": 0,
+      "total_published": 1,
       "by_category": {
         "journal": 0,
         "essay": 0,
         "story": 0,
-        "tech": 0,
+        "tech": 1,
         "copy": 0
       }
     }
